@@ -151,22 +151,17 @@ sequenceDiagram
 ## State management flow
 
 ```mermaid
-flowchart LR
-    A[Initial State] --> B[useEffect runs on mount]
-    B --> C[Fetch API data]
-    C --> D[setRobots updates state]
-    D --> E[Component re-renders]
-    E --> F[User types in SearchBox]
-    F --> G[onSearchChange called]
-    G --> H[setSearchfield updates state]
-    H --> I[Component re-renders]
-    I --> J[Filter robots array]
-    J --> K[Display filtered results]
-    
-    style D fill:#ffebee
-    style H fill:#ffebee
-    style E fill:#e8f5e9
-    style I fill:#e8f5e9
+flowchart TD
+    Start[Initial State] --> Mount[useEffect runs on mount]
+    Mount --> Fetch[Fetch API data]
+    Fetch --> UpdateRobots[setRobots updates state]
+    UpdateRobots --> Render1[Component re-renders]
+    Render1 --> UserInput[User types in SearchBox]
+    UserInput --> SearchChange[onSearchChange called]
+    SearchChange --> UpdateSearch[setSearchfield updates state]
+    UpdateSearch --> Render2[Component re-renders]
+    Render2 --> Filter[Filter robots array]
+    Filter --> Display[Display filtered results]
 ```
 
 ## Components
