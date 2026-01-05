@@ -151,7 +151,7 @@ sequenceDiagram
 ## State management flow
 
 ```mermaid
-graph LR
+flowchart LR
     A[Initial State] --> B[useEffect runs on mount]
     B --> C[Fetch API data]
     C --> D[setRobots updates state]
