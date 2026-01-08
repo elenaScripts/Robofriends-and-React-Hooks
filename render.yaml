@@ -2,9 +2,6 @@ services:
   - type: web
     name: robofriends
     env: node
-    region: oregon
-    plan: free
-    installCommand: npm install
     buildCommand: npm install && npm run build
     startCommand: npx serve -s build -l 10000
     envVars:
